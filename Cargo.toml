@@ -1,0 +1,17 @@
+[package]
+name = "phox_orbitcam"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = "0.13"
+
+[dev-dependencies]
+noise = "*"
+bevy_editor_pls = "*"
+rand = "*"
+indexmap = "*"
+bevy_rapier3d = "*"
+
+[profile.dev.package."*"]
+opt-level = 3
