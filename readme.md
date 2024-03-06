@@ -1,7 +1,7 @@
 # Phox Orbit Camera
-this is an orbit camera made for the [Phox Plugin Jam][https://itch.io/jam/phoxs-bevy-plugin-jam]
+this is an orbit camera made for the [Phox Plugin Jam](https://itch.io/jam/phoxs-bevy-plugin-jam)
 this is a fairly simple orbit camera that is inteded to give people a plugin to use
-during the [Phox Game Jam][https://itch.io/jam/phoxs-bevy-game-jam], the functonality is fairly simple but may be explanded in the future
+during the [Phox Game Jam](https://itch.io/jam/phoxs-bevy-game-jam), the functonality is fairly simple but may be explanded in the future
 
 you can watch the [livestrems](https://www.youtube.com/playlist?list=PL6uRoaCCw7GOrAUOrfBXZESKbdRc-PhS9) of me making the plugin the whole thing was livestreamed, yes even this bit right here, yes me Writing documentation is as boring as you think it is, you should definitely watch me Writing this bit specificly ;P
 
