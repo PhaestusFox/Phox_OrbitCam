@@ -1,23 +1,46 @@
 use bevy::{input::mouse::{MouseMotion, MouseWheel}, prelude::*};
 
+/// The Camera config
+/// Add this component to your camera to make it an orbit camera
 #[derive(Component)]
 pub struct OrbitCam {
+    /// move the player forward
     pub up: KeyCode,
+    /// move the player back
     pub down: KeyCode,
+    /// move the player left
     pub left: KeyCode,
+    /// move the player right
     pub right: KeyCode,
+    /// yaw the camera left
     pub yaw_left: KeyCode,
+    /// yaw the camera right
     pub yaw_right: KeyCode,
+    /// the minimum the camera can be pitched down
+    /// how close to the ground it can get
+    /// 0 would be flat to the ground
     pub min_pitch: f32,
+    /// the maximum the camera can pith up
+    /// how close to looking stright down
+    /// PI/2 would be stright down
     pub max_pitch: f32,
+    /// the key use to change the pitch up
     pub pitch_up: KeyCode,
+    /// the key use to change the pitch down
     pub pitch_down: KeyCode,
+    /// the speed the pich can change
     pub pitch_speed: f32,
+    /// the speed the player moves at
     pub speed: f32,
+    /// the speed the yaw changes
     pub yaw_speed: f32,
+    /// the minimum zoom the player can get to
+    /// zero would be on the pivit
     pub min_zoom: f32,
+    /// the max zoom the player can get to
+    /// zero would be on the pivit
     pub max_zoom: f32,
-    /// Some is enabled bool is invert Y, MouseButton is *Active* Button
+    /// configuration for how the mouse can be used to move the camera
     pub mouse_move: MouseControle,
 }
 
@@ -34,6 +57,8 @@ struct CameraPitch(f32);
 #[derive(Component)]
 struct CameraYaw(f32);
 
+/// the OrbitCamera plugin, add this to your app to have and OrbitCam in your game
+/// then add OrbitCam as a component to you camera entity to make it controled by this plugin
 pub struct OrbitCamPlugin;
 
 impl Plugin for OrbitCamPlugin {
@@ -215,12 +240,22 @@ fn mouse_move(
     }
 }
 
+
+/// configuration for how the mouse can be used to move the camera
 pub enum MouseControle {
+    /// Disables Mouse Controle
     Disabled,
+    /// Enables Mouse Controle
     Enabled {
+        /// Inverts Mouse Y movement relative to camera movement
         invert_y: bool,
+        /// what Keyboard key will make the camera move with the mouse
+        /// Set None to disable
         active_key: Option<KeyCode>,
+        /// what Mouse key will make the camera move with the mouse
+        /// Set None to disable
         active_button: Option<MouseButton>,
+        /// how fast the camera moves relative to the mouse
         sensitivity: f32,
     }
 }
