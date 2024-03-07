@@ -1,20 +1,20 @@
 # Phox Orbit Camera
 this is an orbit camera made for the [Phox Plugin Jam](https://itch.io/jam/phoxs-bevy-plugin-jam)
-this is a fairly simple orbit camera that is inteded to give people a plugin to use
-during the [Phox Game Jam](https://itch.io/jam/phoxs-bevy-game-jam), the functonality is fairly simple but may be explanded in the future
+this is a fairly simple orbit camera that is intended to give people a plugin to use
+during the [Phox Game Jam](https://itch.io/jam/phoxs-bevy-game-jam), the functionality is fairly simple but may be expanded in the future
 
-you can watch the [livestrems](https://www.youtube.com/playlist?list=PL6uRoaCCw7GOrAUOrfBXZESKbdRc-PhS9) of me making the plugin the whole thing was livestreamed, yes even this bit right here, yes me Writing documentation is as boring as you think it is, you should definitely watch me Writing this bit specificly ;P
+you can watch the [livestrems](https://www.youtube.com/playlist?list=PL6uRoaCCw7GOrAUOrfBXZESKbdRc-PhS9) of me making the plugin the whole thing was live-streamed, yes even this bit right here, yes me Writing documentation is as boring as you think it is, you should definitely watch me Writing this bit specifically ;P
 
 # How to use
 add this repo to your cargo.toml
 ```toml
-phox_orbitcam = {git = ""}
+phox_orbitcam = {git = "https://github.com/PhaestusFox/Phox_OrbitCam.git"}
 ```
 then add the plgin to your App
 ```rust
 App::new().add_plugins(phox_orbitcam::OrbitCamPlugin)
 ```
-and finaly add the OrbitCam Component to you camera entity
+and finally add the OrbitCam Component to your camera entity
 ```rust
 commands.spawn((Camera3dBundle::default(), OrbitCam {
         up: KeyCode::KeyW,
@@ -35,4 +35,5 @@ commands.spawn((Camera3dBundle::default(), OrbitCam {
         mouse_move: phox_orbitcam::MouseControle::Enabled { invert_y: false, active_key: None, active_button: Some(MouseButton::Right), sensitivity: 0.01 },
     }));
 ```
-you can configer each camera indiviuly with this componet GLHF in the jam this weekend
+you can configure each camera individually with this component
+GLHF in the jam this weekend
